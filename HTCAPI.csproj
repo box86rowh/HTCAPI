@@ -93,7 +93,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\FeatureController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\CustomerUserController.cs" />
+    <Compile Include="Controllers\JobController.cs" />
+    <Compile Include="Controllers\JobNoteController.cs" />
+    <Compile Include="Controllers\SubContractorController.cs" />
+    <Compile Include="Controllers\SubContractorJobController.cs" />
     <Compile Include="Data\DataProvider.cs" />
     <Compile Include="HTCAPIModuleBase.cs">
       <SubType>ASPXCodeBehind</SubType>
