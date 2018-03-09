@@ -6,65 +6,55 @@ using HTC_CRM_DataAccess.Connections;
 
 namespace AAModules.HTCAPI.Controllers
 {
-    public class CustomerContactController : DnnApiController
+    public class ProposalController : DnnApiController
     {
         [AllowAnonymous]
         [HttpGet]
-        public IEnumerable<CustomerContact> Get()
+        public IEnumerable<Proposal> Get()
         {
             using (var db = DBConnection.GetConnection())
             {
-                return CustomerContact.GetAll<CustomerContact>(db);
+                return Proposal.GetAll<Proposal>(db);
             }
         }
 
         [AllowAnonymous]
         [HttpGet]
-        public CustomerContact Get(int id)
+        public Proposal Get(int id)
         {
             using (var db = DBConnection.GetConnection())
             {
-                return CustomerContact.GetById<CustomerContact>(db, id);
+                return Proposal.GetById<Proposal>(db, id);
             }
         }
 
         [AllowAnonymous]
         [HttpPut]
-        public bool Put([FromBody] CustomerContact c)
+        public bool Put([FromBody] Proposal c)
         {
             using (var db = DBConnection.GetConnection())
             {
-                return CustomerContact.Persist<CustomerContact>(db, c);
+                return Proposal.Persist<Proposal>(db, c);
             }
         }
 
         [AllowAnonymous]
         [HttpPost]
-        public bool Post([FromBody] CustomerContact c)
+        public bool Post([FromBody] Proposal c)
         {
             using (var db = DBConnection.GetConnection())
             {
-                return CustomerContact.Persist<CustomerContact>(db, c);
+                return Proposal.Persist<Proposal>(db, c);
             }
         }
 
         [AllowAnonymous]
         [HttpDelete]
-        public bool Delete(CustomerContact c)
+        public bool Delete(Proposal c)
         {
             using (var db = DBConnection.GetConnection())
             {
-                return CustomerContact.Delete<CustomerContact>(db, c);
-            }
-        }
-
-        [AllowAnonymous]
-        [HttpGet]
-        public IEnumerable<CustomerContact> GetByParentId(int id)
-        {
-            using(var db = DBConnection.GetConnection())
-            {
-                return CustomerContact.GetByCustomerId(db, id);
+                return Proposal.Delete<Proposal>(db, c);
             }
         }
     }
